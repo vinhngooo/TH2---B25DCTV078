@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thư viện của lớp</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Thư viện của lớp</h1>
+    <p class="fav-counter">Yêu thích: <strong id="fav-count">0</strong></p>
+  </header>
+
+  <main class="container">
+    <section class="toolbar" aria-label="Công cụ tìm kiếm và lọc">
+      <label class="field">
+        <span>Tìm theo tên</span>
+        <input type="search" id="search-input" placeholder="Nhập tên sách…" autocomplete="off" />
+      </label>
+      <label class="field">
+        <span>Thể loại</span>
+        <select id="genre-select">
+          <option value="">Tất cả thể loại</option>
+        </select>
+      </label>
+    </section>
+
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <section aria-label="Danh sách sách">
+      <div id="book-list" class="book-grid"></div>
+    </section>
+
+    <section class="add-book" aria-labelledby="add-title">
+      <h2 id="add-title">Thêm sách mới</h2>
+      <form id="book-form" novalidate>
+        <div class="form-row">
+          <label for="title">Tên sách</label>
+          <input type="text" id="title" name="title" />
+          <small class="error" data-error-for="title"></small>
+        </div>
+        <div class="form-row">
+          <label for="author">Tác giả</label>
+          <input type="text" id="author" name="author" />
+          <small class="error" data-error-for="author"></small>
+        </div>
+        <div class="form-row">
+          <label for="genre">Thể loại</label>
+          <select id="genre" name="genre">
+            <option value="">-- Chọn thể loại --</option>
+          </select>
+          <small class="error" data-error-for="genre"></small>
+        </div>
+        <div class="form-row">
+          <label for="year">Năm xuất bản</label>
+          <input type="number" id="year" name="year" />
+          <small class="error" data-error-for="year"></small>
+        </div>
+        <button type="submit" class="btn btn-primary">Thêm sách</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Bài thực hành 02 – Phần A: JavaScript thuần</p>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

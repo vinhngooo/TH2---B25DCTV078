@@ -1,0 +1,94 @@
+:root {
+  --gap: 16px;
+  --primary: #2563eb;
+  --fav: #f59e0b;
+  --bg: #f3f4f6;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px 24px;
+  background: var(--primary);
+  color: #fff;
+}
+.site-header h1 { margin: 0; font-size: 1.5rem; }
+.fav-counter { margin: 0; font-size: 1.1rem; }
+
+.container {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+.section { margin-bottom: 24px; }
+.section h2 { margin: 0 0 12px; font-size: 1.2rem; }
+
+.genre-filter { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.status { margin: 0 0 16px; color: var(--muted); }
+
+.book-grid { display: flex; flex-wrap: wrap; gap: var(--gap); }
+.book-card {
+  flex: 0 0 calc((100% - 2 * var(--gap)) / 3);
+  background: var(--card);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.book-card h3 { margin: 0; font-size: 1.1rem; }
+.book-card p { margin: 0; color: var(--muted); }
+.badge {
+  align-self: flex-start;
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+.card-actions { display: flex; gap: 8px; margin-top: auto; padding-top: 10px; }
+
+.btn {
+  padding: 8px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.btn:hover { background: #f9fafb; }
+.btn-primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+.btn-primary:hover { background: #1d4ed8; }
+.btn-fav.active { background: var(--fav); border-color: var(--fav); color: #fff; }
+
+.site-footer { text-align: center; padding: 16px; color: var(--muted); }
+
+@media (max-width: 768px) {
+  .book-card { flex-basis: 100%; }
+  .site-header { padding: 12px 16px; }
+}
